@@ -1,0 +1,66 @@
+:root {
+    --color-white: hsl(212, 36%, 90%);
+    --color-blue: hsl(212, 43%, 65%);
+}
+html{
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--color-white);
+}
+
+.grid-container {
+    display: grid;
+    background-color: var(--color-white);
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 200px 400px 150px;
+    gap: 20px;
+    grid-template-areas:
+        "een een een twee twee twee"
+        "drie drie vier vier vier vier"
+        "vijf vijf vijf vijf vijf vijf";
+}
+
+.item {
+    background-color: var(--color-blue);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.item-1 {
+    grid-area: een;
+}
+
+.item-2 {
+    grid-area: twee;
+}
+
+.item-3 {
+    grid-area: drie;
+}
+
+.item-4 {
+    grid-area: vier;
+}
+
+.item-5 {
+    grid-area: vijf;
+}
+
+@media screen and (max-width: 768px) {
+    .grid-container {
+        display: grid;
+        background-color: var(--color-white);
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: 200px 400px 150px;
+        gap: 10px;
+        grid-template-areas:
+        "een een twee twee vier vier"
+        "drie drie twee twee vier vier"
+        "vijf vijf vijf vijf vier vier";
+    }
+}
